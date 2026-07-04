@@ -1,0 +1,181 @@
+:root {
+  /* Color tokens — U.S. federal design-system palette (navy / red / white,
+     in the spirit of the open-source USWDS color system: no seals or
+     government insignia are used, just the color + type conventions). */
+  --ink: #ffffff;            /* page background */
+  --panel: #ffffff;          /* card background */
+  --panel-raised: #f0f0f0;   /* subtly raised surface */
+  --hairline: #dfe1e2;       /* standard rule/border gray */
+  --navy: #162e51;           /* masthead / hero navy */
+  --navy-darker: #0f1f38;
+  --blue: #005ea2;           /* primary action blue */
+  --blue-dark: #1a4480;
+  --brass: #b3822a;          /* federal gold/bronze accent */
+  --brass-soft: #d4a94f;
+  --teal: #148f4e;           /* success green */
+  --red: #b50909;            /* error / danger red */
+  --text: #1b1b1b;
+  --text-muted: #5b616b;
+  --text-faint: #71767a;
+
+  /* Type */
+  --font-display: "Public Sans", "Segoe UI", sans-serif;
+  --font-body: "Public Sans", "Segoe UI", sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, monospace;
+
+  --radius: 4px;
+  --radius-lg: 6px;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(circle at 15% 8%, rgba(22, 46, 81, 0.035), transparent 40%),
+    radial-gradient(circle at 85% 92%, rgba(181, 9, 9, 0.03), transparent 45%),
+    repeating-radial-gradient(circle at 50% 0%, transparent 0, transparent 68px, rgba(0,0,0,0.012) 69px, transparent 70px);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--blue); }
+
+h1, h2, h3, h4, .display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.mono { font-family: var(--font-mono); letter-spacing: 0.01em; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+button, input, select, textarea { font-family: inherit; }
+
+button {
+  cursor: pointer;
+  border: 2px solid var(--navy);
+  background: #ffffff;
+  color: var(--navy);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+button:hover { background: var(--panel-raised); }
+button:active { transform: translateY(1px); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 3px solid #2491ff;
+  outline-offset: 2px;
+}
+
+button.primary {
+  background: var(--blue);
+  color: #ffffff;
+  border-color: var(--blue);
+}
+button.primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+
+button.danger {
+  background: #ffffff;
+  color: var(--red);
+  border-color: var(--red);
+}
+button.danger:hover { background: rgba(181, 9, 9, 0.06); }
+
+button.ghost {
+  background: transparent;
+  border-color: var(--hairline);
+  color: var(--text-muted);
+}
+button.ghost:hover { border-color: var(--navy); color: var(--navy); }
+
+input, textarea, select {
+  background: #ffffff;
+  border: 2px solid var(--hairline);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: 10px 13px;
+  font-size: 14px;
+  width: 100%;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--blue);
+  outline: none;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.field { margin-bottom: 16px; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 22px;
+}
+
+.card-raised {
+  background: var(--panel-raised);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+}
+
+.muted { color: var(--text-muted); }
+.faint { color: var(--text-faint); }
+
+.error-banner {
+  background: rgba(181, 9, 9, 0.07);
+  border: 1px solid rgba(181, 9, 9, 0.35);
+  color: #8a0303;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  margin-bottom: 16px;
+}
+
+.success-banner {
+  background: rgba(20, 143, 78, 0.08);
+  border: 1px solid rgba(20, 143, 78, 0.35);
+  color: #0b6b39;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  margin-bottom: 16px;
+}
+
+.hairline-divider {
+  height: 1px;
+  background: var(--hairline);
+  border: none;
+  margin: 18px 0;
+}
+
+::selection { background: var(--brass); color: #ffffff; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--hairline); border-radius: 6px; }
