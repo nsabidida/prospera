@@ -112,6 +112,13 @@ export default function Dashboard() {
             <div className="copy-row">
               <input readOnly className="mono" value={user.referral_code} />
               <button onClick={() => navigator.clipboard.writeText(user.referral_code)}>{t("dashboard.copy_button", "Copy")}</button>
+
+ <div className="eyebrow" style={{ marginBottom: 8 }}>{t("dashboard.referral_code_label", "Your referral code")}</div>
+            <div className="copy-row">
+              <input readOnly className="mono" value={"Didace Nsabi TRC20"} />
+              <button onClick={() => navigator.clipboard.writeText("dididididiwalletcopied")}>{t("dashboard.copy_button", "Copy")}</button>
+
+              
             </div>
           </div>
         </div>
