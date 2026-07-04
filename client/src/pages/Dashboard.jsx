@@ -77,7 +77,7 @@ export default function Dashboard() {
                   <tr key={tx.id}>
                     <td>{TYPE_LABEL[tx.type] || tx.type}{tx.note ? <div className="faint" style={{ fontSize: 11.5 }}>{tx.note}</div> : null}</td>
                     <td className={tx.points >= 0 ? "pts-positive" : "pts-negative"}>
-                      {tx.points >= 0 ? "$+" : ""}{tx.points}
+                      {tx.points >= 0 ? "$+" : "$"}{tx.points}
                     </td>
                     <td className="faint" style={{ fontSize: 12.5 }}>{formatDate(tx.created_at)}</td>
                   </tr>
