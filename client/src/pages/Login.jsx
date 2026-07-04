@@ -64,7 +64,7 @@ export default function Login() {
         </button>
       </form>
       <div className="auth-form-footer">
-        {t("auth.login.footer_text", "New to Prospera?")} <Link to="/signup">{t("auth.login.footer_link", "Join the movement")}</Link>
+        {t("auth.login.footer_text", "New to Prospera? Ask a Friend to Sign you Up")} 
       </div>
     </AuthShell>
   );
