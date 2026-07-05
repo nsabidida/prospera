@@ -42,7 +42,7 @@ export default function Leaderboard() {
                 <td className="mono faint">{i + 1}</td>
                 <td>{r.name} {user?.id === r.id && <span className="pill pill-brass" style={{ marginLeft: 6 }}>{t("leaderboard.you_badge", "You")}</span>}</td>
                 <td className="faint">{r.org_size}</td>
-                <td className="mono" style={{ color: "var(--brass-soft)" }}>{r.points.toLocaleString()}</td>
+                <td className="mono" style={{ color: "var(--brass-soft)" }}>${r.points.toLocaleString()}</td>
               </tr>
             ))}
           </tbody>
